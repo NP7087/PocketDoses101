@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Medicine Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Medicine Tracker</h1>
+
+    <form id="addForm" class="card">
+      <div class="row">
+        <label>Medicine name</label>
+        <input id="name" type="text" placeholder="e.g. Paracetamol" required />
+      </div>
+
+      <div class="row">
+        <label>Time (one daily)</label>
+        <input id="time" type="time" required />
+      </div>
+
+      <div class="row">
+        <label>Quantity on hand</label>
+        <input id="qty" type="number" min="0" value="10" required />
+      </div>
+
+      <div class="row">
+        <label>Dose amount (how many units taken each time)</label>
+        <input id="dose" type="number" min="1" value="1" required />
+      </div>
+
+      <div class="actions">
+        <button type="submit">Add Medicine</button>
+        <button type="button" id="clearAll">Clear All</button>
+      </div>
+    </form>
+
+    <div id="status" class="status">Notifications: <span id="perm">unknown</span></div>
+
+    <h2>Current Medicines</h2>
+    <ul id="medList" class="list"></ul>
+
+    <p class="note">This app stores data only while the page is open. Refreshing the page clears all medicines.</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
